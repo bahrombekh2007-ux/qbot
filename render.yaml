@@ -1,0 +1,25 @@
+# render.yaml - Render.com konfiguratsiyasi
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: quizmaster-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m bot
+    plan: free  # Bepul tarif!
+
+    # Port - Render avtomatik beradi
+    # Bot polling rejimida ishlaydi (webhook kerak emas)
+
+    # Sozlamalar - Render Dashboard > Environment da kiriting:
+    # BOT_TOKEN=your_bot_token_here
+    # JWT_SECRET=your_random_secret
+    # (qolgan barcha default qiymatlarda ishlaydi)
+
+    healthCheckPath: /api/health
+
+    disk:
+      name: quizmaster-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1  # SQLite bazasi uchun
