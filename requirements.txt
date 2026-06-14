@@ -1,22 +1,22 @@
 # =================================================
-# QuizMaster Bot - Render.com uchun optimized
+# QuizMaster Bot - Python 3.12 / Render.com
 # =================================================
 
-# Telegram Bot framework
-aiogram==3.15.0
+# Telegram Bot
+aiogram==3.17.0
 
-# Web server (bot webhook + REST API)
-aiohttp==3.11.10
+# Web Server
+aiohttp==3.10.11
 aiohttp-cors==0.7.0
 
-# Ma'lumotlar bazasi (SQLite - Render free tier uchun)
+# Database
 sqlalchemy[asyncio]==2.0.36
 aiosqlite==0.20.0
 
 # =================================================
-# Fayl parserlari
+# File Processing
 # =================================================
-pypdf2==3.0.1
+PyPDF2==3.0.1
 pdfplumber==0.11.4
 python-docx==1.1.2
 openpyxl==3.1.5
@@ -25,14 +25,19 @@ chardet==5.2.0
 mammoth==1.8.0
 
 # =================================================
-# Konfiguratsiya va xavfsizlik
+# Configuration
 # =================================================
 pydantic==2.10.3
 pydantic-settings==2.6.1
 python-dotenv==1.0.1
-pyjwt==2.10.1
+PyJWT==2.10.1
 
 # =================================================
-# Middleware uchun
+# Utilities
 # =================================================
 cachetools==5.5.0
+
+# =================================================
+# Production
+# =================================================
+gunicorn==23.0.0
